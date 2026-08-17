@@ -25,7 +25,7 @@ const PROJECTS = {
     "description": "Outil de manipulation Base64 (multi-encodage / décodage en chaîne). Un gain de temps précieux en CTF.",
     "tags": ["JavaScript", "React", "Encode"],
     "theme": "CyberSécurité",
-    "link": "https://github.com/ch4tan/MEOWFLOW-frontend",
+    "link": "https://github.com/ch4tan/meowFlow2",
   },
   "SouthPark Randomizer": {
     "image": "/cartman.png",
