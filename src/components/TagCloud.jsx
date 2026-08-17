@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TagCloud from "TagCloud";
 import TypingEffect from "./TypingEffect";
 
@@ -33,34 +33,59 @@ const TagCloud3D = () => {
 
     container.innerHTML = "";
 
+    const getRadius = () => {
+      const width = window.innerWidth;
+      if (width < 480) return 130; 
+      if (width < 768) return 160; 
+      return 210;                  
+    };
+
     const options = {
-      radius: 200, 
+      radius: getRadius(), 
       maxSpeed: "normal",
       initSpeed: "slow",
       direction: 135,
       keep: true,
     };
 
-    TagCloud(container, MYTAGS, options);
+    const tagCloudInstance = TagCloud(container, MYTAGS, options);
 
     const handleContainerClick = (e) => {
       if (e.target && e.target.classList.contains("tagcloud--item")) {
         const skillName = e.target.innerText;
-        setSelectedQuote(skillName); // Déclenche la mise à jour !
+        setSelectedQuote(skillName);
       }
     };
 
     container.addEventListener("click", handleContainerClick);
 
+    const handleResize = () => {
+      if (container) {
+        container.innerHTML = "";
+        TagCloud(container, MYTAGS, { ...options, radius: getRadius() });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
+      container.removeEventListener("click", handleContainerClick);
+      window.removeEventListener("resize", handleResize);
       container.innerHTML = "";
     };
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-10 lg:gap-32 justify-center items-center">
-      <span ref={containerRef} className="text-emerald-400/90 font-bold lg:cursor-pointer" />
-      <TypingEffect text={selectedQuote ? SKILL_DESCRIPTIONS[selectedQuote] : "Cliquez sur mes centres d'intérêt et mes compétences pour obtenir plus d'informations."} />
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 justify-center items-center w-full overflow-hidden px-4 py-6">
+      <div className="flex justify-center items-center min-h-[300px] sm:min-h-[400px] w-96 max-w-[320px] sm:max-w-none">
+        <span 
+          ref={containerRef} 
+          className="text-emerald-400/90 font-bold cursor-pointer select-none [&_.tagcloud--item]:text-xs [&_.tagcloud--item]:sm:text-sm [&_.tagcloud--item]:hover:text-emerald-300" 
+        />
+      </div>
+      <div className="w-full lg:max-w-md">
+        <TypingEffect text={selectedQuote ? SKILL_DESCRIPTIONS[selectedQuote] : "Cliquez sur mes centres d'intérêt et mes compétences pour obtenir plus d'informations."} />
+      </div>
     </div>
   );
 };

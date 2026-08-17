@@ -13,17 +13,31 @@ const Skills = () => {
             case "Dev":
                 return (<TagCloud3D />);
             case "SysRes":
-                return (<ServerRack />);
+                return (
+                    <div className="flex h-96 w-full">
+
+                        <ServerRack />
+                    </div>
+
+                
+                    
+                    );
             case "Secu":
-                return (<TerminalCyber />);
+                return (
+                    
+
+                        <TerminalCyber />
+
+                );
+
             default:
                 return null;
         }
     };
 
     return (
-        <div className="flex flex-col h-full w-full border-solid border-white items-center justify-center text-white">
-            <menu className="flex fixed top-[10vh] w-96 gap-10 justify-center border-t-2 border-b-2 border-solid border-white ">
+        <div className="flex flex-col h-full w-full border-solid border-white items-center justify-center text-white overflow-y-scroll">
+            <menu className="flex fixed z-10 top-[10vh] w-full lg:w-96 gap-8 lg:gap-10 justify-center border-t-2 border-b-2 border-solid border-white ">
                 <a 
                     className={selector === "Dev" ? selectedCategoryMenuStyle : inialCategoryMenuStyle}
                     onClick={() => setSelector("Dev")}

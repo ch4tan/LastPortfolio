@@ -20,7 +20,7 @@ const PROFILES = [
 
 const ProfileMarquee = () => {
   return (
-    <div className="w-96 max-w-4xl mx-auto py-6">
+    <div className="w-full lg:w-96 lg:max-w-4xl mx-auto py-6">
       <Marquee
         speed={40}
         pauseOnHover={true}
