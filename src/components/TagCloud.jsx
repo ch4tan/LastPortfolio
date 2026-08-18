@@ -76,7 +76,7 @@ const TagCloud3D = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 justify-center items-center w-full overflow-hidden px-4 py-6">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 justify-center items-center w-full overflow-hidden px-4 py-6 notranslate">
       <div className="flex justify-center items-center min-h-[300px] sm:min-h-[400px] w-96 max-w-[320px] sm:max-w-none">
         <span 
           ref={containerRef} 

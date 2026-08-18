@@ -52,7 +52,7 @@ const CyberTerminal = () => {
   };
 
   return (
-    <div className="w-full max-w-lg overflow-hidden rounded-xl border border-emerald-500/30 shadow-[0_0_25px_rgba(16,185,129,0.15)] bg-[#090d16] font-mono text-sm text-emerald-400">
+    <div className="w-full max-w-lg overflow-hidden rounded-xl border border-emerald-500/30 shadow-[0_0_25px_rgba(16,185,129,0.15)] bg-[#090d16] font-mono text-sm text-emerald-400 notranslate">
         <div className="flex h-10 items-center gap-2 bg-slate-900 px-4 border-b border-emerald-500/20 select-none shrink-0">
             <div className="h-3 w-3 rounded-full bg-red-500/80" />
             <div className="h-3 w-3 rounded-full bg-yellow-500/80" />

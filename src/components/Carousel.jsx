@@ -61,7 +61,7 @@ const ProjectCarousel = () => {
         slideShadows: true,
       }}
       modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-      className="w-full max-w-5xl py-10 [--swiper-navigation-color:#10b981] [--swiper-pagination-color:#10b981]"
+      className="w-full max-w-5xl py-10 [--swiper-navigation-color:#10b981] [--swiper-pagination-color:#10b981] notranslate"
     >
       {Object.entries(PROJECTS).map(([title, project]) => (
         <SwiperSlide 
