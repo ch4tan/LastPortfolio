@@ -36,7 +36,7 @@ const Skills = () => {
     };
 
     return (
-        <div className="flex flex-col h-full w-full border-solid border-white items-center justify-center text-white overflow-y-scroll">
+        <div className="flex flex-col h-full w-full border-solid border-white items-center justify-center text-white overflow-y-scroll notranslate">
             <menu className="flex fixed z-10 top-[10vh] w-full lg:w-96 gap-8 lg:gap-10 justify-center border-t-2 border-b-2 border-solid border-white ">
                 <a 
                     className={selector === "Dev" ? selectedCategoryMenuStyle : inialCategoryMenuStyle}

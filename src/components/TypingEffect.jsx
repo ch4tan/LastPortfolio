@@ -21,7 +21,7 @@ const TypingEffect = ({ text }) => {
     }, [text, speed]);
 
     return (
-        <div className="flex w-full lg:w-96 h-10 justify-center">
+        <div className="flex w-full lg:w-96 h-10 justify-center notranslate">
             <p id="textBox" className="flex lg:text-2xl w-96 text-white items-center">{sen}</p>
         </div>
     );
